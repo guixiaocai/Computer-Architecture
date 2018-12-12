@@ -3,3 +3,12 @@ lab-report/*.zip
 lab-report/*.bit
 lab-report/*.txt
 test-func/watch/*
+cpu_axi_ifc_dev/run_vivado/*
+cpu_axi_ifc_dev/*.bit
+*.xlsx
+*.pptx
+*.pdf
+*.JPG
+*.zip
+ucas_CDE/*
+ucas_CDE_axi/*
