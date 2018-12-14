@@ -4,7 +4,7 @@
 |   |
 |   |--myCPU_ALU.v     ：ALU模块
 |   |
-|   |--myCPU_core        : CPU核，支持总线（仿真能过，上板过不了...）
+|   |--myCPU_core        : CPU核，支持总线（仿真能过，上板也可以）
 |   |
 |   |--myCPU_define.h  ：自定义头文件，包含各条指令的操作码
 |   |

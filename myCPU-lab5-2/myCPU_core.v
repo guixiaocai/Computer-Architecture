@@ -929,7 +929,7 @@ begin
         LOWriteE    <= 1'b0;
         LOReadE     <= 1'b0;
     end
-    if(ID_to_EX_valid & EX_allowin)
+    else if(ID_to_EX_valid & EX_allowin)
     begin
         div_signedE <= div_signed;
         divE        <= div;
@@ -1217,7 +1217,7 @@ begin
         cp0_count_wenM   <= 1'b0;
         cp0_compare_wenM <= 1'b0;
     end
-    if(EX_to_MA_valid & MA_allowin)
+    else if(EX_to_MA_valid & MA_allowin)
     begin
         cp0_status_wenM  <= cp0_status_wenE;
         cp0_cause_wenM   <= cp0_cause_wenE;
@@ -1235,7 +1235,7 @@ begin
         HIWriteM    <= 1'b0;
         LOWriteM    <= 1'b0;
     end
-    if(EX_to_MA_valid & MA_allowin)
+    else if(EX_to_MA_valid & MA_allowin)
     begin
         divM        <= divE;
         mulM        <= mulE;
@@ -1311,7 +1311,7 @@ begin
         ResW      <= 32'd0;
         PCW       <= 32'd0;
     end
-    if(MA_to_WB_valid & WB_allowin)
+    else if(MA_to_WB_valid & WB_allowin)
     begin
         op_loadW  <= op_loadM;
         MemtoRegW <= MemtoRegM;

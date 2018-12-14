@@ -204,7 +204,7 @@ always@(posedge clk)
 begin
     if(~resetn)
         rvalid_t <= 1'b0;
-    else if(r_curstate == ReadFin && r_nxtstate == ReadSt && rid == 4'd1 
+    else if(r_curstate == ReadFin && r_nxtstate == ReadSt && arid == 4'd1 
                  && w_curstate == WriteFin && w_nxtstate == WriteSt)
         rvalid_t <= 1'b1;
     else
@@ -213,21 +213,21 @@ end
 
 always@(posedge clk)
 begin
-    if(rvalid && rid == 4'd0)
+    if(rvalid && arid == 4'd0)
         inst_rdata <= rdata;
     //else
     //    inst_rdata <= 32'd0;
-    if(rvalid && rid == 4'd1)
+    if(rvalid && arid == 4'd1)
         data_rdata <= rdata;
     //else
     //    data_rdata <= 32'd0;
     
-    inst_data_ok <= rvalid && rid == 4'd0;
+    inst_data_ok <= rvalid && arid == 4'd0;
     //data_data_ok <= r_curstate == ReadFin && r_nxtstate == ReadSt && rid == 4'd1 
     //             || w_curstate == WriteFin && w_nxtstate == WriteSt || rvalid_t;
 end
 //data_data_ok chage from reg to wire
-assign data_data_ok = r_curstate == ReadFin && r_nxtstate == ReadSt && rid == 4'd1 
+assign data_data_ok = r_curstate == ReadFin && r_nxtstate == ReadSt && arid == 4'd1 
                  || w_curstate == WriteFin && w_nxtstate == WriteSt || rvalid_t;
 always@(posedge clk)
 begin
